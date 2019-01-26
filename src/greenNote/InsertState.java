@@ -1,6 +1,8 @@
 package greenNote;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class InsertState extends States{
 	
@@ -8,7 +10,6 @@ public class InsertState extends States{
 	private String title = ""; 
 	private String type = "";
 	private String content = "";
-    HashMap<String, Integer> tags = new HashMap<String, Integer>();
     //ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
     
     InsertState(){
@@ -119,15 +120,15 @@ public class InsertState extends States{
 			return;
 		}
 		
-		
 		String tag;
-		
 		for(int i=1;i<=Integer.parseInt(numberOfTags);i++)
 		{
 			System.out.println("Tag number : " + i);
 			tag = userAction[5+i];
 			tags.put(tag,NotePosition);
 		}
+
+		
 	}
 	
 	private void editTitle(String Title)
