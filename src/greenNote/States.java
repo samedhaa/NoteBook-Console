@@ -5,10 +5,10 @@ import java.util.HashMap;
 
 public class States extends Notebook{
 	
-	String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","3","task"}; // temporary input
+	String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","1","task"}; // temporary input
     static ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
     static HashMap<String, Integer > tags = new HashMap<String, Integer >();
-
+ 
     Integer NotePosition = -1;
     Integer endFile = 0;
 	
@@ -38,16 +38,36 @@ public class States extends Notebook{
 			}
 			else
 			{
+				int id = 1;
 				for(DbTemblate note : Notes)
 				{
+					System.out.println(id);
 					note.printNote();
+					id++;
 				}
+				System.out.println("if you want to delete any note enter it's id");
+				System.out.println("otherwise type 0");
+				int input = Integer.parseInt(userAction[10]);
+				if(input != 0)
+				{
+					try
+					{
+						Notes.remove(input-1);
+						System.out.println("Deleted!");
+					}catch(Exception e)
+					{
+						System.out.println("Note id is worng");
+						System.out.println(input);
+					}
+				}
+				
+				
 			}
 		}
 		else if(state.equals("3"))
 		{
 			System.out.println("Please enter the tag");
-			String tag = userAction[10];
+			String tag = userAction[11];
 			System.out.println(tag);
 			GoogleIt al = new GoogleIt(tag);
 			
@@ -55,12 +75,13 @@ public class States extends Notebook{
 		else
 		{
 			System.out.println("I'm not a damn AI give me something i can understand");
+			System.out.println(endFile);
 		}
-		if(endFile == 9) // temporary
+		if(endFile == 10) // temporary
 			return;
 		else if(endFile == 8)
-			endFile = 9;
-		else if(endFile != 8 & endFile != 9)
+			endFile = 10;
+		else if(endFile != 10 & endFile != 8)
 			endFile = 8;
 		stateDirecting(); 
 		
