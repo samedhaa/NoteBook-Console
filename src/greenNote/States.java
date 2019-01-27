@@ -1,21 +1,16 @@
 package greenNote;
 
-import java.util.ArrayList;
+import java.util.ArrayList; // 2 problems i don't delete the tag from the hashmap , the input sucks
+// why the url should have it's own class?
 import java.util.HashMap;
+import java.util.Map;
 
 public class States extends Notebook{
 	
-<<<<<<< HEAD
-	String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","3","task"}; // temporary input
-    static ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
-    static HashMap<String, Integer > tags = new HashMap<String, Integer >();
-
-=======
-	String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","1","task"}; // temporary input
+	static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","1","task"}; // temporary input
     static ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
     static HashMap<String, Integer > tags = new HashMap<String, Integer >();
  
->>>>>>> e463df9b063c60be89ac905de9fd73807e11fdc5
     Integer NotePosition = -1;
     Integer endFile = 0;
 	
@@ -35,50 +30,16 @@ public class States extends Notebook{
 		if(state.equals("1"))
 		{
 			System.out.println("Insert Entered : ");
-			InsertState Insert = new InsertState();
+			InsertState Insert = new InsertState(); // should be called statically 
 		}
 		else if(state.equals("2"))
 		{
-			if(Notes.size() == 0)
-			{
-				System.out.println("There is no notes yet...");
-			}
-			else
-			{
-				int id = 1;
-				for(DbTemblate note : Notes)
-				{
-					System.out.println(id);
-					note.printNote();
-					id++;
-				}
-				System.out.println("if you want to delete any note enter it's id");
-				System.out.println("otherwise type 0");
-				int input = Integer.parseInt(userAction[10]);
-				if(input != 0)
-				{
-					try
-					{
-						Notes.remove(input-1);
-						System.out.println("Deleted!");
-					}catch(Exception e)
-					{
-						System.out.println("Note id is worng");
-						System.out.println(input);
-					}
-				}
-				
-				
-			}
+			RDState.Start();
 		}
 		else if(state.equals("3"))
 		{
 			System.out.println("Please enter the tag");
-<<<<<<< HEAD
-			String tag = userAction[10];
-=======
 			String tag = userAction[11];
->>>>>>> e463df9b063c60be89ac905de9fd73807e11fdc5
 			System.out.println(tag);
 			GoogleIt al = new GoogleIt(tag);
 			
@@ -88,19 +49,11 @@ public class States extends Notebook{
 			System.out.println("I'm not a damn AI give me something i can understand");
 			System.out.println(endFile);
 		}
-<<<<<<< HEAD
-		if(endFile == 9) // temporary
-			return;
-		else if(endFile == 8)
-			endFile = 9;
-		else if(endFile != 8 & endFile != 9)
-=======
 		if(endFile == 10) // temporary
 			return;
 		else if(endFile == 8)
 			endFile = 10;
 		else if(endFile != 10 & endFile != 8)
->>>>>>> e463df9b063c60be89ac905de9fd73807e11fdc5
 			endFile = 8;
 		stateDirecting(); 
 		
