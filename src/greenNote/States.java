@@ -9,7 +9,9 @@ import java.util.Map;
 public class States extends Notebook{
 	
 	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
-	static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","3","task","0","task"}; // temporary input
+	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","3","task","0","task"}; // temporary input
+	static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
+
 
 	static ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
     static HashMap<String, List<Integer> > tags = new HashMap<String, List<Integer> >();

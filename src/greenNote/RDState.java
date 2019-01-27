@@ -22,13 +22,13 @@ public class RDState extends States{
 				note.printNote();
 			}
 			System.out.println("if you want to delete any note enter it's id");
-			System.out.println("otherwise type 0");
-			int input = Integer.parseInt(userAction[10]);
-			if(input != 0)
+			System.out.println("otherwise type -1");
+			Integer input = Integer.parseInt(userAction[9]);
+			if(input != -1)
 			{
 				try
 				{
-						DbTemblate deletedTags = Notes.get(input-1);
+						DbTemblate deletedTags = Notes.get(input);
 						HashMap<String, List<Integer>> deleted = deletedTags.getTags();
 						
 							
