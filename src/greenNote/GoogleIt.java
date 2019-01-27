@@ -1,5 +1,7 @@
 package greenNote;
 
+import java.util.List;
+
 public class GoogleIt extends States{
 	
 	GoogleIt(String tag)
@@ -10,7 +12,13 @@ public class GoogleIt extends States{
 		}
 		else
 		{
-			Notes.get(tags.get(tag)).printNote();
+			 // 
+			for(Integer  tagPosition : tags.get(tag))
+			{
+				DbTemblate note1 = Notes.get(tagPosition);
+				note1.printNote();
+			}
+			
 		}
 	}
 

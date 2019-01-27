@@ -40,7 +40,7 @@ public class InsertState extends States{
 		System.out.println(content);
 		System.out.println(tags);
 		*/
-		DbTemblate InsertedNotes = new DbTemblate(title, type, content, tags);
+		DbTemblate InsertedNotes = new DbTemblate(title, type, content, tags,NotePosition);
 		Notes.add(InsertedNotes);
 		//Notes.get(NotePosition).printNote();
 		
@@ -125,7 +125,18 @@ public class InsertState extends States{
 		{
 			System.out.println("Tag number : " + i);
 			tag = userAction[5+i];
-			tags.put(tag,NotePosition);
+			List<Integer> prevData = new ArrayList<Integer>();
+			if(tags.containsKey(tag))
+			{
+				prevData.addAll(tags.get(tag));
+			}
+			
+			prevData.add(NotePosition);
+
+			tags.put(tag,prevData);
+
+//			prevData.clear();
+
 		}
 
 		

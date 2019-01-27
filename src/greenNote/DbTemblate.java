@@ -1,6 +1,5 @@
 package greenNote;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,10 +8,12 @@ public class DbTemblate {
 	private String title = ""; 
 	private String type = "";
 	private String content = "";
-	HashMap<String, Integer > tags = new HashMap<String, Integer >();
+	private Integer id = 0;
+	HashMap<String, List<Integer> > tags = new HashMap<String, List<Integer> >();
 	
-	DbTemblate(String title, String type, String content, HashMap<String, Integer > tags)
+	DbTemblate(String title, String type, String content, HashMap<String, List<Integer> > tags, Integer id)
 	{
+		this.id = id;
 		this.title = title;
 		this.type = type;
 		this.content = content;
@@ -21,13 +22,14 @@ public class DbTemblate {
 	
 	public void printNote()
 	{
+		System.out.println("Note ID : " + id);
 		System.out.println(title + " : " + type);
 		System.out.println(content);
 		System.out.println(tags);
 		//Integer L = tags["task"];
 	}
 	
-	public HashMap<String, Integer > getTags()
+	public HashMap<String, List<Integer> > getTags()
 	{
 		return tags;
 	}
@@ -43,6 +45,10 @@ public class DbTemblate {
 	public String getType()
 	{
 		return type;
+	}
+	public Integer getId()
+	{
+		return id;
 	}
  
 }
