@@ -12,7 +12,7 @@ public class UserLogin extends Users{
 		
 		
 		// this return true if the login succeeded
-		while(DB.AuthorizeUser(userId, userPassword) == false) // q for omar : is there a better way for making it more secure?
+		while(DB.AuthorizeUser(userId, userPassword) == false) 
 		{
 			System.out.println("Please enter user id : ");
 			
@@ -21,11 +21,11 @@ public class UserLogin extends Users{
 			
 			System.out.println("Please enter password : ");
 			
-			userInput = new Scanner(System.in); // ?
+			userInput = new Scanner(System.in); 
 			userPassword = userInput.nextLine();
 		}
 		
-		userInput.close(); // getting out of bath is just like entering it
+		userInput.close(); 
 		
 	}
 }

@@ -26,7 +26,6 @@ public class DbTemblate {
 		System.out.println(title + " : " + type);
 		System.out.println(content);
 		System.out.println(tags);
-		//Integer L = tags["task"];
 	}
 	
 	public HashMap<String, List<Integer> > getTags()

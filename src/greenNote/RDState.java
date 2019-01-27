@@ -1,15 +1,12 @@
 package greenNote;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class RDState extends States{
 	
-	public void Start()
+	public static void Start()
 	{
 		if(Notes.size() == 0) // 
 		{
@@ -21,8 +18,8 @@ public class RDState extends States{
 			{
 				note.printNote();
 			}
-			System.out.println("if you want to delete any note enter it's id");
-			System.out.println("otherwise type -1");
+			System.out.println("if you want to delete any note enter it's id \n otherwise type -1");
+
 			Integer input = Integer.parseInt(userAction[9]);
 			if(input != -1)
 			{
@@ -45,7 +42,6 @@ public class RDState extends States{
 				catch(Exception e)
 				{
 					System.out.println("Note id is worng");
-					System.out.println(input);
 				}
 			}
 			

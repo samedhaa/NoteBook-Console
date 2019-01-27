@@ -10,7 +10,6 @@ public class InsertState extends States{
 	private String title = ""; 
 	private String type = "";
 	private String content = "";
-    //ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
     
     InsertState(){
     	NotePosition++;
@@ -24,7 +23,7 @@ public class InsertState extends States{
 					
 		getTitle();
 		
-		getType();// text or audio
+		getType();
 		
 		System.out.println("Would you like to add a tag ? yes/no");
 		String isTagged  = userAction[4];
@@ -34,18 +33,11 @@ public class InsertState extends States{
 			getTags();
 		}
 		
-		/**
-		System.out.println(title);
-		System.out.println(type);
-		System.out.println(content);
-		System.out.println(tags);
-		*/
+		
 		DbTemblate InsertedNotes = new DbTemblate(title, type, content, tags,NotePosition);
 		States.Notes.add(InsertedNotes);
-		System.out.println("#@#!@#@");
 
 		InsertedNotes.printNote();
-		//Notes.get(NotePosition).printNote();
 		
 	}
 	

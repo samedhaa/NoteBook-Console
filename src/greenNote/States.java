@@ -21,50 +21,34 @@ public class States extends Notebook{
 	
 	public void stateDirecting()
 	{
+		String Message = "Type 1 to add new note\n Type 2 to view notes\n ";
+		System.out.println(Message);
 
-		System.out.println("Type 1 to add new note");
-		System.out.println("Type 2 to view notes");
-		System.out.println("Type 3 to search for notes based on tags");
-
-		//userAction = new Scanner(System.in);
-		//System.out.println(userAction.nextLine());
-		String state = "";//userAction.readLine()
+		String state = "";
 
 		state = userAction[endFile];
-		System.out.println("State : " + state);
 		if(state.equals("1"))
 		{
-			System.out.println("Insert Entered : ");
-			InsertState Insert = new InsertState(); // should be called statically 
-
-			endFile = 8;
-
+			new InsertState();
+			endFile = 8; // those are temporary for the input
 		}
 		else if(state.equals("2"))
 		{	
-
-			RDState la = new RDState();
-			la.Start();
+			RDState.Start();
 			endFile++;
 		}
 		else if(state.equals("3"))
 		{
-			System.out.println(Notes.size());
-			System.out.println("Please enter the tag");
+			System.out.println("Please enter the tag : ");
 			endFile++;
 			String tag = userAction[endFile];
-			System.out.println(tag);
-			System.out.println("****");
-			System.out.println(tags.get(tag));
-			GoogleIt search = new GoogleIt(tag);
+			new GoogleIt(tag);
 			
 		}
 		else
 		{
 			System.out.println("I'm not a damn AI give me something i can understand");
-			System.out.println(endFile);
 		}
-		System.out.println("end state");
 
 		if(endFile == 9) // temporary
 			return;

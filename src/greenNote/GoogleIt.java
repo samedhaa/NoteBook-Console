@@ -12,7 +12,7 @@ public class GoogleIt extends States{
 		}
 		else
 		{
-			 // 
+			 
 			for(Integer tagPosition : tags.get(tag))
 			{
 				DbTemblate note1 = States.Notes.get(tagPosition);
