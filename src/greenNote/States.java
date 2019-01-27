@@ -8,9 +8,11 @@ import java.util.Map;
 
 public class States extends Notebook{
 	
-	static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
-    ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
-    HashMap<String, List<Integer> > tags = new HashMap<String, List<Integer> >();
+	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
+	static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","3","task","0","task"}; // temporary input
+
+	static ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
+    static HashMap<String, List<Integer> > tags = new HashMap<String, List<Integer> >();
  
     Integer NotePosition = -1;
     Integer endFile = 0;
@@ -37,18 +39,21 @@ public class States extends Notebook{
 
 		}
 		else if(state.equals("2"))
-		{
+		{	
 
 			RDState la = new RDState();
 			la.Start();
 			endFile++;
-			System.out.println(Notes.size());
 		}
 		else if(state.equals("3"))
 		{
+			System.out.println(Notes.size());
 			System.out.println("Please enter the tag");
-			String tag = userAction[11];
+			endFile++;
+			String tag = userAction[endFile];
 			System.out.println(tag);
+			System.out.println("****");
+			System.out.println(tags.get(tag));
 			GoogleIt search = new GoogleIt(tag);
 			
 		}

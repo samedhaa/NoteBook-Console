@@ -41,7 +41,10 @@ public class InsertState extends States{
 		System.out.println(tags);
 		*/
 		DbTemblate InsertedNotes = new DbTemblate(title, type, content, tags,NotePosition);
-		Notes.add(InsertedNotes);
+		States.Notes.add(InsertedNotes);
+		System.out.println("#@#!@#@");
+
+		InsertedNotes.printNote();
 		//Notes.get(NotePosition).printNote();
 		
 	}
@@ -130,7 +133,6 @@ public class InsertState extends States{
 			{
 				prevData.addAll(tags.get(tag));
 			}
-			
 			prevData.add(NotePosition);
 
 			tags.put(tag,prevData);
