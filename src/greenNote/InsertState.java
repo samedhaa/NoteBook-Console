@@ -57,6 +57,7 @@ public class InsertState extends States{
 		
 		System.out.println("Please enter the Url for the voice : ");
 		content  = userAction[3];
+		//get content 
 		
 	}
 	

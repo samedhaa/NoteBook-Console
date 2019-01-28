@@ -15,7 +15,7 @@ public class Notebook {
 		 after viewing it.
 		 */
 		States userNoteBook = new States();//States.stateDirecting(); 
-		userNoteBook.stateDirecting();
+		userNoteBook.stateDirecting(); // singelton
 
 	}
 	

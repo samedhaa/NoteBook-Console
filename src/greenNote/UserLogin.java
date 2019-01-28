@@ -1,27 +1,25 @@
 package greenNote;
 import java.util.Scanner;
-public class UserLogin extends Users{
+public class UserLogin{
 
 	static public void Login()
 	{
 		Users DB = new Users(); // A class that have users.
-		Scanner userInput = null;
-		String userId = null;
-		String userPassword = null;
+		Scanner userInput = new Scanner(System.in); ;
+		String userId = "";
+		String userPassword = "";
 		
 		
 		
 		// this return true if the login succeeded
-		while(DB.AuthorizeUser(userId, userPassword) == false) 
+		while(DB.AuthorizeUser(userId, userPassword) == false) // do while
 		{
 			System.out.println("Please enter user id : ");
 			
-			userInput = new Scanner(System.in);
 			userId = userInput.nextLine();
 			
 			System.out.println("Please enter password : ");
 			
-			userInput = new Scanner(System.in); 
 			userPassword = userInput.nextLine();
 		}
 		

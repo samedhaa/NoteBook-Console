@@ -14,20 +14,19 @@ public class Users {
 	
 	public boolean AuthorizeUser(String id, String password)
 	{
-		String user = usersDatabase.get(id);
-		if(user == null)
+		String user = "";
+		if(usersDatabase.containsKey(id) == false)
 		{
-			if(id != null) // because this runs once before getting the user input
-			{
-				System.out.println("The User you entered is not singed up!");
-			}
+			System.out.println("The User you entered is not singed up!");
 			return false;
 		}
 		else
 		{
+			user = usersDatabase.get(id);
+			
 			if(user.equals(password))
 			{
-
+	
 				System.out.println("Login Succeeded");
 				return true;
 			}
