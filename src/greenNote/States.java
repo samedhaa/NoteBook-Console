@@ -1,12 +1,11 @@
 package greenNote;
 
-import java.util.ArrayList; // 2 problems i don't delete the tag from the hashmap , the input sucks
-// why the url should have it's own class?
+import java.util.ArrayList; 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class States extends Notebook{
+public class States extends Notebook implements NotebookConstance{
 	
 	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
 	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","3","task","0","task"}; // temporary input
@@ -21,8 +20,7 @@ public class States extends Notebook{
 	
 	public void stateDirecting()
 	{
-		String Message = "Type 1 to add new note\n Type 2 to view notes\n ";
-		System.out.println(Message);
+		System.out.println(NotebookConstance.NOTETYPE);
 
 		String state = "";
 
@@ -39,7 +37,7 @@ public class States extends Notebook{
 		}
 		else if(state.equals("3"))
 		{
-			System.out.println("Please enter the tag : ");
+			System.out.println(NotebookConstance.ENTERTAG);
 			endFile++;
 			String tag = userAction[endFile];
 			new GoogleIt(tag);
@@ -47,7 +45,7 @@ public class States extends Notebook{
 		}
 		else
 		{
-			System.out.println("I'm not a damn AI give me something i can understand");
+			System.out.println(NotebookConstance.WRONGINPUT);
 		}
 
 		if(endFile == 9) // temporary
