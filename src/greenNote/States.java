@@ -3,7 +3,6 @@ package greenNote;
 import java.util.ArrayList; 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class States extends Notebook implements NotebookConstance{
 	
@@ -27,7 +26,9 @@ public class States extends Notebook implements NotebookConstance{
 		state = userAction[endFile];
 		if(state.equals("1"))
 		{
-			new InsertState();
+			InsertState insertAction = new InsertState();
+			insertAction.Inserting();
+			
 			endFile = 8; // those are temporary for the input
 		}
 		else if(state.equals("2"))
@@ -40,7 +41,7 @@ public class States extends Notebook implements NotebookConstance{
 			System.out.println(NotebookConstance.ENTERTAG);
 			endFile++;
 			String tag = userAction[endFile];
-			new GoogleIt(tag);
+			GoogleIt.Search(tag);
 			
 		}
 		else
@@ -54,7 +55,5 @@ public class States extends Notebook implements NotebookConstance{
 		stateDirecting(); 
 		
 	}
-	
-	
 	
 }

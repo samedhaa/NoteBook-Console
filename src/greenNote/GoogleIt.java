@@ -1,10 +1,9 @@
 package greenNote;
 
-import java.util.List;
 
 public class GoogleIt extends States{
 	
-	GoogleIt(String tag)
+	public static void Search(String tag)
 	{
 		if(Notes.size() == 0)
 		{

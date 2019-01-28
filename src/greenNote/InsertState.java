@@ -1,7 +1,6 @@
 package greenNote;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class InsertState extends States{
@@ -13,12 +12,10 @@ public class InsertState extends States{
     
     InsertState(){
     	NotePosition++;
-		InsertingState();
-
     }
     
 
-	public void InsertingState()
+	public void Inserting()
 	{
 					
 		getTitle();
@@ -129,8 +126,6 @@ public class InsertState extends States{
 			prevData.add(NotePosition);
 
 			tags.put(tag,prevData);
-
-//			prevData.clear();
 
 		}
 
