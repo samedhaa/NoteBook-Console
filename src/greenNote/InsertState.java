@@ -22,6 +22,7 @@ public class InsertState extends States{
 		
 		getType();
 		
+		
 		System.out.println("Would you like to add a tag ? yes/no");
 		String isTagged  = userAction[4];
 			
