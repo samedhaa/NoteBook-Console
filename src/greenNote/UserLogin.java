@@ -12,16 +12,17 @@ public class UserLogin{
 		
 		
 		// this return true if the login succeeded
-		while(DB.AuthorizeUser(userId, userPassword) == false) // do while
+		do
 		{
-			System.out.println("Please enter user id : ");
-			
-			userId = userInput.nextLine();
-			
-			System.out.println("Please enter password : ");
-			
-			userPassword = userInput.nextLine();
+				System.out.println("Please enter user id : ");
+				
+				userId = userInput.nextLine();
+				
+				System.out.println("Please enter password : ");
+				
+				userPassword = userInput.nextLine();
 		}
+		while(DB.AuthorizeUser(userId, userPassword) == false);
 		
 		userInput.close(); 
 		
