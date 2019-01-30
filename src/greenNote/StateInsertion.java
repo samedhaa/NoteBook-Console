@@ -3,14 +3,14 @@ package greenNote;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InsertState extends States{
+public class StateInsertion extends States{
 	
 	
 	private String title = ""; 
 	private String type = "";
 	private String content = "";
     
-    InsertState(){
+    StateInsertion(){
     	NotePosition++;
     }
     

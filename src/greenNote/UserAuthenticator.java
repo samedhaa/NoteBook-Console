@@ -1,6 +1,6 @@
 package greenNote;
 import java.util.Scanner;
-public class UserLogin{
+public class UserAuthenticator{
 
 	static public void Login()
 	{

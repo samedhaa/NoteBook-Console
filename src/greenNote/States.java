@@ -28,7 +28,7 @@ public class States implements NotebookConstance{
 		state = userAction[endFile];
 		if(state.equals("1"))
 		{
-			InsertState insertAction = new InsertState();
+			StateInsertion insertAction = new StateInsertion();
 			insertAction.Inserting();
 			
 			endFile = 8; // those are temporary for the input

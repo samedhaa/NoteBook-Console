@@ -10,7 +10,7 @@ public class Notebook {
 	   protected static void activateNotebook( ) {
 		      
 			// This will get the password for the note book;
-			UserLogin.Login(); // A while loop will keep runing till it get the right id + pw;
+			UserAuthenticator.Login(); // A while loop will keep runing till it get the right id + pw;
 			
 			/**
 			 This helper function choose the state (view notes,insert a note,
