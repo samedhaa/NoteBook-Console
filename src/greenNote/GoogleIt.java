@@ -5,7 +5,7 @@ public class GoogleIt extends States{
 	
 	public static void Search(String tag)
 	{
-		if(Notes.size() == 0)
+		if(UNotes.size() == 0)
 		{
 			System.out.println("Not Found! ");
 		}
@@ -14,7 +14,7 @@ public class GoogleIt extends States{
 			 
 			for(Integer tagPosition : tags.get(tag))
 			{
-				DbTemblate note1 = States.Notes.get(tagPosition);
+				UrlNote note1 = States.UNotes.get(tagPosition);
 				note1.printNote();
 			}
 			

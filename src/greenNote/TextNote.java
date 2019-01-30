@@ -21,7 +21,10 @@ public class TextNote extends NoteTemblate{
 	
 	@Override
 	public void printNote() {
-		// TODO Auto-generated method stub
+		System.out.println(id + " : " + title);
+		System.out.println(content);
+		System.out.println(type);
+
 		
 	}
 	

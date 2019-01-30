@@ -8,24 +8,25 @@ public class RDState extends States{
 	
 	public static void Start()
 	{
-		if(Notes.size() == 0) // 
+		if(UNotes.size() == 0 & TNotes.size() == 0) // 
 		{
 			System.out.println("There is no notes yet...");
 		}
 		else
 		{
-			for(DbTemblate note : Notes)
+			for(UrlNote note : UNotes)
 			{
 				note.printNote();
 			}
 			System.out.println("if you want to delete any note enter it's id \n otherwise type -1");
 
 			Integer input = Integer.parseInt(userAction[9]);
+			boolean catched = false;
 			if(input != -1)
 			{
 				try
 				{
-						DbTemblate deletedTags = Notes.get(input);
+						UrlNote deletedTags = UNotes.get(input);
 						HashMap<String, List<Integer>> deleted = deletedTags.getTags();
 						
 							
@@ -35,13 +36,28 @@ public class RDState extends States{
 
 						}
 
-						Notes.remove(input);
+						UNotes.remove(input);
 						System.out.println("Deleted!");
 				}
 					
 				catch(Exception e)
 				{
-					System.out.println("Note id is worng");
+					catched = true;
+				}
+				
+				if(catched == true)
+				{
+					
+					try
+					{
+							UNotes.remove(input);
+							System.out.println("Deleted!");
+					}
+					
+					catch(Exception e)
+					{
+						System.out.println("Note id is worng");
+					}
 				}
 			}
 			

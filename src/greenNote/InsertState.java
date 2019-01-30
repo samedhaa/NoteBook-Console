@@ -22,20 +22,30 @@ public class InsertState extends States{
 		
 		getType();
 		
-		
-		System.out.println("Would you like to add a tag ? yes/no");
-		String isTagged  = userAction[4];
-			
-		if(isTagged.equals("yes") | isTagged.equals("YES") | isTagged.equals("Yes") | isTagged.equals("y") | isTagged.equals("Y"))
+		if(type == "audio")
 		{
-			getTags();
-		}
-		
-		
-		DbTemblate InsertedNotes = new DbTemblate(title, type, content, tags,NotePosition);
-		States.Notes.add(InsertedNotes);
+			System.out.println("Would you like to add a tag ? yes/no");
+			String isTagged  = userAction[4];
+				
+			if(isTagged.equals("yes") | isTagged.equals("YES") | isTagged.equals("Yes") | isTagged.equals("y") | isTagged.equals("Y"))
+			{
+				getTags();
+			}
+			
+			
+			UrlNote InsertedNotes = new UrlNote(title, type, content, tags,NotePosition); // content = url
+			States.UNotes.add(InsertedNotes);
+			InsertedNotes.printNote();
 
-		InsertedNotes.printNote();
+		}
+		else
+		{
+			TextNote InsertedNotes = new TextNote(title, type, content,NotePosition);
+			States.TNotes.add(InsertedNotes);
+			InsertedNotes.printNote();
+
+		}
+
 		
 	}
 	

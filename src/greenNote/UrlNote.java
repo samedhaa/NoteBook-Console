@@ -37,7 +37,11 @@ public class UrlNote extends NoteTemblate{
 
 	@Override
 	public void printNote() {
-		// TODO Auto-generated method stub
+
+		System.out.println(id + " : " + title);
+		System.out.println(url);
+		System.out.println(type);
+		System.out.println(tags);
 		
 	}
 

@@ -11,7 +11,9 @@ public class States extends Notebook implements NotebookConstance{
 	static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
 
 
-	static ArrayList<DbTemblate> Notes = new ArrayList<DbTemblate>();
+	static ArrayList<TextNote> TNotes = new ArrayList<TextNote>();
+	static ArrayList<UrlNote> UNotes = new ArrayList<UrlNote>();
+
     static HashMap<String, List<Integer> > tags = new HashMap<String, List<Integer> >();
  
     Integer NotePosition = -1;
