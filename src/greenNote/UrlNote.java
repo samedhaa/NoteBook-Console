@@ -3,12 +3,14 @@ package greenNote;
 import java.util.HashMap;
 import java.util.List;
 
-public class UrlNote extends NotesTemblate{
+public class UrlNote extends NoteTemblate{
 	
-	String url = "";
 	HashMap<String, List<Integer> > tags = new HashMap<String, List<Integer> >();
+
+	private String url = "";
 	
-	public void Insert(Integer id, String title, String type, String url, HashMap<String, List<Integer> > tags)
+
+	UrlNote(String title, String type, String url, HashMap<String, List<Integer> > tags, Integer id)
 	{
 		this.id = id;
 		this.title = title;
@@ -17,34 +19,28 @@ public class UrlNote extends NotesTemblate{
 		this.tags = tags;
 	}
 	
-	@Override
+	public HashMap<String, List<Integer> > getTags()
+	{
+		return tags;
+	}
+	
+	public String getUrl()
+	{
+		return url;
+	}
 	public Integer getId()
 	{
-		return this.id;
+		return id;
 	}
-	
-	@Override
-	public String getTitle() 
-	{
-		return this.title;
-	}
-	
-	@Override
-	public String getType()
-	{
-		return this.type;
-	}
-	
-	@Override
-	public void printNote()
-	{
-		System.out.println("Note ID : " + this.id);
-		System.out.println(this.title + " : " + this.type);
-		System.out.println(this.url);
-		System.out.println(this.tags);
 
+
+
+	@Override
+	public void printNote() {
+		// TODO Auto-generated method stub
 		
 	}
-	
+
+
 
 }
