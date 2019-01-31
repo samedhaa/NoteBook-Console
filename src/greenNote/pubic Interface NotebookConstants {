@@ -1,4 +1,0 @@
-pubic Interface NotebookConstants {
-	
-	public static final String INPUT_MESSAGE = ""; 
-}
