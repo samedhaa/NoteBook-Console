@@ -6,18 +6,18 @@ import java.util.List;
 
 public class States implements NotebookConstance{
 	
-	static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
+	public static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
 	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","3","task","0","task"}; // temporary input
 	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
 
 
-	static ArrayList<TextNote> TNotes = new ArrayList<TextNote>();
-	static ArrayList<UrlNote> UNotes = new ArrayList<UrlNote>();
+	public static ArrayList<TextNote> TNotes = new ArrayList<TextNote>();
+	public static ArrayList<UrlNote> UNotes = new ArrayList<UrlNote>();
 
-    static HashMap<String, List<Integer> > tags = new HashMap<String, List<Integer> >();
+    public static HashMap<String, List<Integer> > tags = new HashMap<String, List<Integer> >();
  
     Integer NotePosition = -1;
-    Integer endFile = 0;
+    private Integer endFile = 0;
 	
 	public void stateDirecting()
 	{

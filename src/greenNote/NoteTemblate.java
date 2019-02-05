@@ -2,8 +2,8 @@ package greenNote;
 
 public abstract class NoteTemblate {
 
-	String title = ""; 
-	Integer id = 0;
+	public String title = ""; 
+	public Integer id = 0;
 	
 	
 	public abstract void printNote();

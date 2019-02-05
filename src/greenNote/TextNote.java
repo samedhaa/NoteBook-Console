@@ -11,7 +11,7 @@ public class TextNote extends NoteTemblate{
 		
 		setTitle(title);
 
-		setContent(messageContent);
+		setContent(content);
 	}
 
 	
