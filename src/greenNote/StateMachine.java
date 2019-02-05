@@ -3,14 +3,14 @@ package greenNote;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StateInsertion extends States{
+public class StateMachine extends States{
 	
 	
 	private String title = ""; 
 	private String type = "";
 	private String content = "";
     
-    StateInsertion(){
+    StateMachine(){
     	NotePosition++;
     }
     
@@ -24,29 +24,12 @@ public class StateInsertion extends States{
 		
 		if(type == "audio")
 		{
-			System.out.println("Would you like to add a tag ? yes/no");
-			String isTagged  = userAction[4];
-				
-			if(isTagged.equals("yes") | isTagged.equals("YES") | isTagged.equals("Yes") | isTagged.equals("y") | isTagged.equals("Y"))
-			{
-				getTags();
-			}
-			
-			
-			UrlNote InsertedNotes = new UrlNote(title, type, content, tags,NotePosition); // content = url
-			States.UNotes.add(InsertedNotes);
-			InsertedNotes.printNote();
-
+			insertAudioNote();
 		}
 		else
 		{
-			TextNote InsertedNotes = new TextNote(title, type, content,NotePosition);
-			States.TNotes.add(InsertedNotes);
-			InsertedNotes.printNote();
-
+			insertTextNote();
 		}
-
-		
 	}
 	
 	
@@ -157,8 +140,29 @@ public class StateInsertion extends States{
 	{
 		this.content = Content;
 	}
+		
+	public void insertAudioNote()
+	{
+		System.out.println("Would you like to add a tag ? yes/no");
+		String isTagged  = userAction[4];
+			
+		if(isTagged.equals("yes") | isTagged.equals("YES") | isTagged.equals("Yes") | isTagged.equals("y") | isTagged.equals("Y"))
+		{
+			getTags();
+		}
+		
+		
+		UrlNote InsertedNotes = new UrlNote(title, content, tags,NotePosition); // content = url
+		States.UNotes.add(InsertedNotes);
+		InsertedNotes.printNote();
+	}
 	
-	//tags
+	public void insertTextNote()
+	{
+		TextNote InsertedNotes = new TextNote(title, content,NotePosition);
+		States.TNotes.add(InsertedNotes);
+		InsertedNotes.printNote();
+	}
 
 
 }

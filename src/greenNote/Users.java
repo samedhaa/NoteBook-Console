@@ -15,12 +15,7 @@ public class Users {
 	public boolean AuthorizeUser(String id, String password)
 	{
 		String user = "";
-		if(usersDatabase.containsKey(id) == false)
-		{
-			System.out.println("The User you entered is not singed up!");
-			return false;
-		}
-		else
+		if(usersDatabase.containsKey(id))
 		{
 			user = usersDatabase.get(id);
 			
@@ -35,6 +30,11 @@ public class Users {
 				System.out.println("The Password is Wrong!");
 				return false;
 			}
+		}
+		else
+		{
+			System.out.println("The User you entered is not singed up!");
+			return false;
 		}
 	}
 }

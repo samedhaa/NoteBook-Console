@@ -10,13 +10,16 @@ public class UrlNote extends NoteTemblate{
 	private String url = "";
 	
 
-	UrlNote(String title, String type, String url, HashMap<String, List<Integer> > tags, Integer id)
+	UrlNote(String title, String url, HashMap<String, List<Integer> > tags, Integer id)
 	{
-		this.id = id;
-		this.title = title;
-		this.type = type;
-		this.url = url;
-		this.tags = tags;
+		setId(id);
+		
+		setTitle(title);
+		
+		setUrl(url);
+		
+		setTags(tags);
+		
 	}
 	
 	public HashMap<String, List<Integer> > getTags()
@@ -28,19 +31,23 @@ public class UrlNote extends NoteTemblate{
 	{
 		return url;
 	}
-	public Integer getId()
+	
+		
+	public void setUrl(String url)
 	{
-		return id;
+		this.url = url;
 	}
 
-
+	public void setTags(HashMap<String, List<Integer> > tags)
+	{
+		this.tags = tags;
+	}
 
 	@Override
 	public void printNote() {
 
 		System.out.println(id + " : " + title);
 		System.out.println(url);
-		System.out.println(type);
 		System.out.println(tags);
 		
 	}

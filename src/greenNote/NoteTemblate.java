@@ -3,11 +3,20 @@ package greenNote;
 public abstract class NoteTemblate {
 
 	String title = ""; 
-	String type = "";
 	Integer id = 0;
 	
 	
 	public abstract void printNote();
+	
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
+	
+	public void setId(Integer id)
+	{
+		this.id = id;
+	}
 	
 	
 	public String getTitle()
@@ -15,13 +24,9 @@ public abstract class NoteTemblate {
 		return this.title;
 	}
 	
-	public String getType()
-	{
-		return type;
-	}
 	public Integer getId()
 	{
-		return id;
+		return this.id;
 	}
 	
 }

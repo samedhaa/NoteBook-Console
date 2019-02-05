@@ -6,9 +6,9 @@ import java.util.List;
 
 public class States implements NotebookConstance{
 	
-	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
-	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","3","task","0","task"}; // temporary input
 	static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
+	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","3","task","0","task"}; // temporary input
+	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
 
 
 	static ArrayList<TextNote> TNotes = new ArrayList<TextNote>();
@@ -26,12 +26,10 @@ public class States implements NotebookConstance{
 		String state = "";
 
 		state = userAction[endFile];
+		
 		if(state.equals("1"))
 		{
-			StateInsertion insertAction = new StateInsertion();
-			insertAction.Inserting();
-			
-			endFile = 8; // those are temporary for the input
+			startState();
 		}
 		else if(state.equals("2"))
 		{	
@@ -40,11 +38,7 @@ public class States implements NotebookConstance{
 		}
 		else if(state.equals("3"))
 		{
-			System.out.println(NotebookConstance.ENTERTAG);
-			endFile++;
-			String tag = userAction[endFile];
-			GoogleIt.Search(tag);
-			
+			Google();
 		}
 		else
 		{
@@ -56,6 +50,23 @@ public class States implements NotebookConstance{
 
 		stateDirecting(); 
 		
+	}
+	
+	public void startState()
+	{
+		StateMachine insertAction = new StateMachine();
+		insertAction.Inserting();
+		
+		endFile = 8; // those are temporary for the input
+
+	}
+	
+	public void Google()
+	{
+		System.out.println(NotebookConstance.ENTERTAG);
+		endFile++;
+		String tag = userAction[endFile];
+		GoogleIt.Search(tag);
 	}
 	
 }
