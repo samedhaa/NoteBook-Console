@@ -1,8 +1,13 @@
-package greenNote;
+package States;
 
 import java.util.ArrayList; 
 import java.util.HashMap;
 import java.util.List;
+
+import Search.GoogleIt;
+import greenNote.NotebookConstance;
+import greenNote.TextNote;
+import greenNote.UrlNote;
 
 public class States implements NotebookConstance{
 	

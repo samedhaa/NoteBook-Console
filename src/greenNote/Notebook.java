@@ -1,5 +1,8 @@
 package greenNote;
 
+import States.States;
+import UserAuthenticator.UserAuthenticator;
+
 public class Notebook {
 	
 	   private static Notebook instance;
@@ -7,7 +10,7 @@ public class Notebook {
 	      // Exists only to defeat instantiation.
 	   }
 	   
-	   protected static void activateNotebook( ) {
+	   public static void activateNotebook( ) {
 		      
 			// This will get the password for the note book;
 			UserAuthenticator.Login(); // A while loop will keep runing till it get the right id + pw;

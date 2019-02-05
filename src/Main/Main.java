@@ -1,4 +1,6 @@
-package greenNote;
+package Main;
+
+import greenNote.Notebook;
 
 public class Main {
 

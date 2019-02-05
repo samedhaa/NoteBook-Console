@@ -5,7 +5,7 @@ public class TextNote extends NoteTemblate{
 	
 	private String messageContent = "";
 
-	TextNote(String title, String content, Integer id)
+	public TextNote(String title, String content, Integer id)
 	{
 		setId(id);
 		

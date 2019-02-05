@@ -1,5 +1,7 @@
-package greenNote;
+package Search;
 
+import States.States;
+import greenNote.UrlNote;
 
 public class GoogleIt extends States{
 	

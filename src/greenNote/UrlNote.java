@@ -10,7 +10,7 @@ public class UrlNote extends NoteTemblate{
 	private String url = "";
 	
 
-	UrlNote(String title, String url, HashMap<String, List<Integer> > tags, Integer id)
+	public UrlNote(String title, String url, HashMap<String, List<Integer> > tags, Integer id)
 	{
 		setId(id);
 		

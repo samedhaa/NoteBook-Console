@@ -1,4 +1,5 @@
-package greenNote;
+package UserAuthenticator;
+import greenNote.*;
 import java.util.Scanner;
 public class UserAuthenticator{
 

@@ -1,7 +1,10 @@
-package greenNote;
+package States;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import greenNote.TextNote;
+import greenNote.UrlNote;
 
 public class StateMachine extends States{
 	

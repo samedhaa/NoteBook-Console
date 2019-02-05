@@ -1,8 +1,10 @@
-package greenNote;
+package States;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import greenNote.UrlNote;
 
 public class RDState extends States{
 	
