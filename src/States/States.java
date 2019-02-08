@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import Search.GoogleIt;
+import greenNote.NoteTemblate;
 import greenNote.NotebookConstance;
 import greenNote.TextNote;
 import greenNote.UrlNote;
@@ -12,6 +12,7 @@ import greenNote.UrlNote;
 public class States implements NotebookConstance{
 	
 	public static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
+	public static String[] userInput = {"audio"};
 	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","3","task","0","task"}; // temporary input
 	//static String[] userAction = {"1","ITG Task","1","This is a note for a task","YES","2","task","itg","2","0","0","task"}; // temporary input
 
@@ -24,7 +25,7 @@ public class States implements NotebookConstance{
     Integer NotePosition = -1;
     private Integer endFile = 0;
 	
-	public void stateDirecting()
+	public Integer stateDirecting()
 	{
 		System.out.println(NotebookConstance.NOTETYPE);
 
@@ -38,7 +39,21 @@ public class States implements NotebookConstance{
 		}
 		else if(state.equals("2"))
 		{	
-			RDState.Start();
+			System.out.println("is it audio or url ?");
+			String noteType = userInput[0];
+			if(noteType.equals("audio"))
+			{				
+				UrlNote.RDState();
+			}
+			else if(noteType.equals("url"))
+			{
+				TextNote.RDState();
+			}
+			else
+			{
+				System.out.println("type isn't defined");
+				return stateDirecting();
+			}
 			endFile++;
 		}
 		else if(state.equals("3"))
@@ -51,9 +66,9 @@ public class States implements NotebookConstance{
 		}
 
 		if(endFile == 9) // temporary
-			return;
+			return 0;
 
-		stateDirecting(); 
+		return stateDirecting(); 
 		
 	}
 	
@@ -71,7 +86,7 @@ public class States implements NotebookConstance{
 		System.out.println(NotebookConstance.ENTERTAG);
 		endFile++;
 		String tag = userAction[endFile];
-		GoogleIt.Search(tag);
+		UrlNote.Search(tag);
 	}
 	
 }

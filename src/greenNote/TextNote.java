@@ -1,5 +1,11 @@
 package greenNote;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import States.States;
+
 
 public class TextNote extends NoteTemblate{
 	
@@ -29,6 +35,28 @@ public class TextNote extends NoteTemblate{
 		System.out.println(id + " : " + title);
 		System.out.println(messageContent);
 
+		
+	}
+
+
+	public static void RDState() {
+		
+		Integer input = RDnote();
+		
+		if(input == -1)
+			return;
+		
+		Integer index = 0;
+		
+		for(TextNote textNote : States.TNotes)
+		{
+			if(textNote.getId()==input)
+			{
+				States.TNotes.remove(index);
+			}
+			
+			index++;
+		}
 		
 	}
 	
