@@ -53,6 +53,8 @@ public class TextNote extends NoteTemblate{
 			if(textNote.getId()==input)
 			{
 				States.TNotes.remove(index);
+				System.out.println("Deleted!!");
+				break;
 			}
 			
 			index++;
